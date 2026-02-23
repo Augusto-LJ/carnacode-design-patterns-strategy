@@ -2,7 +2,7 @@
 using StrategyChallenge.Strategy;
 
 namespace StrategyChallenge.ConcreteStrategy;
-public class Local : IShippingCalculatorStrategy
+public class LocalStrategy : IShippingCalculatorStrategy
 {
     private readonly decimal _baseCost = 8.00m;
     private readonly decimal _perKgCost = 1.50m;

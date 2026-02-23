@@ -2,7 +2,7 @@
 using StrategyChallenge.Strategy;
 
 namespace StrategyChallenge.ConcreteStrategy;
-public class Fedex : IShippingCalculatorStrategy
+public class FedexStrategy : IShippingCalculatorStrategy
 {
     private readonly decimal _baseCost = 30.00m;
     private readonly decimal _perKgCost = 5.00m;
