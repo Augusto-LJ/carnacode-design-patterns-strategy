@@ -13,7 +13,7 @@ public class DhlStrategy : IShippingCalculatorStrategy
     private readonly int _expressDeliveryTime = 1;
     private readonly decimal _maxWeight = 50.00m;
 
-    public decimal CalculateShipping(ShippingInfo info, string carrier)
+    public decimal CalculateShipping(ShippingInfo info)
     {
         decimal cost = _baseCost + (info.Weight * _perKgCost);
 
@@ -23,16 +23,15 @@ public class DhlStrategy : IShippingCalculatorStrategy
         if (info.IsExpress)
             cost += _expressCharge;
 
-        Console.WriteLine($"→ Cálculo DHL: R$ {cost:N2}");
         return cost;
     }
 
-    public int GetDeliveryTime(ShippingInfo info, string carrier)
+    public int GetDeliveryTime(ShippingInfo info)
     {
         return info.IsExpress ? _expressDeliveryTime : _usualDeliveryTime;
     }
 
-    public bool IsAvailable(ShippingInfo info, string carrier)
+    public bool IsAvailable(ShippingInfo info)
     {
         return info.Weight <= _maxWeight;
     }

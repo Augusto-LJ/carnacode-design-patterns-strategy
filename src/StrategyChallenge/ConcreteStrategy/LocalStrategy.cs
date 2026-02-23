@@ -8,7 +8,7 @@ public class LocalStrategy : IShippingCalculatorStrategy
     private readonly decimal _perKgCost = 1.50m;
     private readonly int _deliveryTime = 1;
     private readonly string _serviceArea = "São Paulo-SP";
-    public decimal CalculateShipping(ShippingInfo info, string carrier)
+    public decimal CalculateShipping(ShippingInfo info)
     {
         decimal cost = _baseCost + (info.Weight * _perKgCost);
 
@@ -21,16 +21,15 @@ public class LocalStrategy : IShippingCalculatorStrategy
             return 0;
         }
 
-        Console.WriteLine($"→ Cálculo Local: R$ {cost:N2}");
         return cost;
     }
 
-    public int GetDeliveryTime(ShippingInfo info, string carrier)
+    public int GetDeliveryTime(ShippingInfo info)
     {
         return _deliveryTime;
     }
 
-    public bool IsAvailable(ShippingInfo info, string carrier)
+    public bool IsAvailable(ShippingInfo info)
     {
         return info.Destination.Contains(_serviceArea);
     }
