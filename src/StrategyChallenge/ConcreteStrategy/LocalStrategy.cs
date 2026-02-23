@@ -12,9 +12,6 @@ public class LocalStrategy : IShippingCalculatorStrategy
     {
         decimal cost = _baseCost + (info.Weight * _perKgCost);
 
-        if (info.IsExpress)
-            Console.WriteLine("   ℹ️ Transportadora local sempre entrega rápido");
-
         if (!info.Destination.Contains(_serviceArea))
         {
             Console.WriteLine("   ❌ Não atende esta região!");
