@@ -3,8 +3,6 @@
 // FedEx, DHL, Transportadora Local), cada uma com sua própria lógica de cálculo. O código atual
 // usa condicionais para escolher o algoritmo, violando o Open/Closed Principle
 
-using System;
-
 namespace DesignPatternChallenge
 {
     // Contexto: Sistema de e-commerce que calcula frete baseado em peso, destino e urgência
@@ -220,10 +218,10 @@ namespace DesignPatternChallenge
             Console.WriteLine("• Compor múltiplos cálculos (ex: frete + seguro)");
 
             // Perguntas para reflexão:
-            // - Como encapsular cada algoritmo em sua própria classe?
-            // - Como tornar algoritmos intercambiáveis?
-            // - Como adicionar novos algoritmos sem modificar código existente?
-            // - Como permitir que cliente escolha algoritmo em runtime?
+            // - Como encapsular cada algoritmo em sua própria classe?              - 
+            // - Como tornar algoritmos intercambiáveis?                            - 
+            // - Como adicionar novos algoritmos sem modificar código existente?    - 
+            // - Como permitir que cliente escolha algoritmo em runtime?            - 
         }
     }
 }
